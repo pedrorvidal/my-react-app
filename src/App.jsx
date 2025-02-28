@@ -1,24 +1,23 @@
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-import "./App.css";
 
-const Card = () => {
+const Card = ({ title }) => {
+  const [hasLiked, setHasLiked] = useState(false);
+
   return (
-    <div>
-      <h2>Card component</h2>
+    <div className="card">
+      <h2>{title}</h2>
+      <button onClick={() => setHasLiked(true)}>Like</button>
     </div>
   );
 };
 
 const App = () => {
   return (
-    <>
-      <h2>Functional arrow component!</h2>
-      <Card />
-      <Card />
-      <Card />
-    </>
+    <div className="card-container">
+      <Card title="Star Wars" />
+      <Card title="Avatar" />
+      <Card title="The Lion King" />
+    </div>
   );
 };
 
