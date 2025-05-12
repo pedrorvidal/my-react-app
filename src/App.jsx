@@ -6,12 +6,15 @@ const Card = ({ title }) => {
   return (
     <div className="card">
       <h2>{title}</h2>
-      <button onClick={() => setHasLiked(true)}>Like</button>
+      <button onClick={() => setHasLiked(!hasLiked)}>
+        {hasLiked ? "❤️" : "🤍"}
+      </button>
     </div>
   );
 };
 
 const App = () => {
+
   return (
     <div className="card-container">
       <Card title="Star Wars" />
